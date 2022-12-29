@@ -15,29 +15,29 @@ class Automata:
     accepts = []
     alphabet = []
 
-    def __init__(self, states_passed, accepts_passed, alphabet_passed, q0_passed, func):
+    def __init__(self, states_passed, accepts_passed, alphabet_passed, q0_passed, function):
         self.set_states(states_passed)
         self.set_accepts(accepts_passed)
         self.alphabet = alphabet_passed
         self.q0 = State(q0_passed)
-        self.set_func(func)
+        self.set_func(function)
 
     def set_states(self, states_passed):
         for state in states_passed:
-            self.states = states.append(State(states))
+            self.states = self.states.append(State(self.states))
 
     def set_accepts(self, accepts_passed):
-        for accept in accepts_passed:
-            accept_temp = states[states.index(accept)]
+        for a in accepts_passed:
+            accept_temp = self.states[self.states.index(a)]
             accept_temp.isAccept = True
-            self.accepts.append()
+            self.accepts.append(accept_temp)
 
-    def set_func(self, func):
-        for i in range(0,int(len(func)/3)):
-            src = func[i]
-            dest = func[i + 1]
-            alph = func[i + 2]
-            states[states.index(src)].set_transition(dest,alph)
+    def set_func(self, function):
+        for i in range(0, int(len(function)/3)):
+            src = function[i*3]
+            dest = function[(i * 3) + 1]
+            alph = function[(i * 3) + 2]
+            self.states[self.states.index(src)].set_transition(dest, alph)
 
 
 states = input('Enter states:')
